@@ -15,9 +15,19 @@ userlist:Users[]=[
   phone:'9856254545',
   email:'abhijit@gmail.com'},
 ]
+  newUser:Users;
   constructor() { }
 
   getUsers():Users[]{
     return this.userlist;
+  }
+  addUsers(Users){
+    this.newUser={
+      username:Users.username,
+      phone:Users.phone,
+      email:Users.email
+    };
+    this.userlist.push(this.newUser);
+    
   }
 }

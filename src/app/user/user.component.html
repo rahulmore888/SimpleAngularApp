@@ -7,19 +7,22 @@
       <div class="row d-flex justify-content-center">
            <div class="col-lg-4">
                 <div class="form-group">    
-                  <input type="text" formControlName="phoneModel" placeholder="Phone Number" id="phoneModel"
+                  <input type="text" formControlName="phoneModel"  maxlength="10"  placeholder="Phone Number" id="phoneModel"
                   [(ngModel)]='phoneModel' class="form-control"                  
                   [ngClass]="{ 'is-invalid': searchformdata && searchuserFormControls.phoneModel.errors }" >
-                  <div *ngIf="searchformdata && searchuserFormControls.phoneModel.errors"
-                  class="invalid-feedback">
-                  <div *ngIf="searchuserFormControls.phoneModel.errors.required">Phone number is
-                      required *</div>
-                      <div *ngIf="searchuserFormControls.phoneModel.errors.minLength">
-                          Enter 10 digit</div>        
-                  <div *ngIf="searchformdata && searchuserFormControls.phoneModel.errors.pattern">
-                      Invalid input for phone number</div>
+                <div *ngIf="searchformdata && searchuserFormControls.phoneModel.errors" class="invalid-feedback">
+                    <div *ngIf="searchuserFormControls['phoneModel'].hasError('required')" class = "alert alert-danger">
+                        <span>phone number required</span>      
+                    </div>
+                    <div *ngIf="searchuserFormControls['phoneModel'].hasError('minlength')">
+                          Enter 10 digit
+                    </div>                                  
+                    <div *ngIf="searchformdata && searchuserFormControls.phoneModel.errors.pattern">
+                            Invalid input for phone number
+                    </div>
+                            
                   
-              </div>
+                </div>
                 </div>
                 <div class="col-lg-2">
                   <button  class="btn btn-block btn-lg btn-info" >Search</button>
@@ -87,7 +90,7 @@
       <div class="form-group">
           <label class="col-md-12">Phone Number</label>
           <div class="col-md-12">
-              <input type="text" placeholder="Phone Name"
+              <input type="text" placeholder="Phone Name"  maxlength="10" 
                   class="form-control form-control-line" formControlName="phoneModel"
                   [(ngModel)]='phoneModel' class="form-control"
                   [ngClass]="{ 'is-invalid': addUserData && addFormData.phoneModel.errors }">
@@ -95,8 +98,10 @@
                   class="invalid-feedback">
                   <div *ngIf="addFormData.phoneModel.errors.required">Phone number is
                       required *</div>
-                      <div *ngIf="addFormData.phoneModel.errors.minLength">
-                          Enter 10 digit</div>       
+                      <div *ngIf="searchuserFormControls['phoneModel'].hasError('minlength')">
+                        Enter 10 digit
+                  </div>  
+                        
                   <div *ngIf="addUserData && addFormData.phoneModel.errors.pattern">
                       Invalid input for phone number</div>
                    

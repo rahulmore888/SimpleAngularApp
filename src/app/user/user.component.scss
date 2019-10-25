@@ -1,0 +1,60 @@
+.btn{
+	padding: 3px;
+	background-color: #bfb4a5;
+    border-radius: 8px;
+	width: 15%;
+	height: 32px;
+}
+
+ .card{
+	 padding: 30px;
+	 text-align: center;
+ }
+
+ .form-control{
+	 max-width: 450px;
+ }
+ input{
+	padding: 4px;
+	margin-bottom: 12px;
+	border-radius: 6px;
+	border-width: thick;
+    border-color: bisque;
+ }
+
+.material {
+	position: relative;
+	background-color: antiquewhite !important;
+	border: 3px;
+	text-align: center;
+    border-color: aquamarine;
+}
+
+.material .datatable-header{
+	position: relative;
+	background-color: antiquewhite !important;
+	border: 3px;
+	text-align: center;
+	font-weight:500px;
+    border-color: aquamarine;
+}
+.h3{
+	padding: 30px;
+	 text-align: center;
+}
+$table-font-color: #606c71;
+$table-border-color: #e9ebec;
+
+:host{
+  /deep/ {
+
+    table{
+      color: $table-font-color;
+      tr {
+        td,th{
+          border: 5px solid $table-border-color;
+        }
+      }
+    }
+  }
+}

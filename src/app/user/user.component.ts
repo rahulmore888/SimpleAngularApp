@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { UserserviceService } from '../userservice/userservice.service';
-import { Users } from './users';
+import { Users } from '../model/users';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {NgPipesModule, FilterByPipe} from 'ngx-pipes';
 
